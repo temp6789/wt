@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Talent Submission Form</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e8f0fe;
+      padding: 20px;
+    }
+    .form-container {
+      background: #fff;
+      max-width: 600px;
+      margin: auto;
+      padding: 35px 40px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+    .form-container:hover {
+      box-shadow: 0 12px 30px rgba(0, 123, 255, 0.35);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #004085;
+    }
+    label {
+      display: block;
+      margin-top: 18px;
+      font-weight: 600;
+      color: #333;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1.8px solid #ccc;
+      font-size: 15px;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+    }
+    button {
+      margin-top: 25px;
+      padding: 14px;
+      width: 100%;
+      background: linear-gradient(90deg, #007bff, #0056b3);
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(90deg, #0056b3, #003974);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Talent Submission Form</h2>
+    <form id="talentForm">
+      <label for="name">Full Name *</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email *</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" />
+
+      <label for="ageGroup">Age Group *</label>
+      <select id="ageGroup" name="ageGroup" required>
+        <option value="">-- Select --</option>
+        <option value="Child">Child (Below 13)</option>
+        <option value="Teen">Teen (13-19)</option>
+        <option value="Adult">Adult (20+)</option>
+      </select>
+
+      <label for="category">Talent Category *</label>
+      <select id="category" name="category" required>
+        <option value="">-- Select --</option>
+        <option value="Singing">Singing</option>
+        <option value="Dancing">Dancing</option>
+        <option value="Acting">Acting</option>
+        <option value="Instrument">Instrument Playing</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="performanceTitle">Performance Title *</label>
+      <input type="text" id="performanceTitle" name="performanceTitle" required />
+
+      <label for="theme">Theme / Inspiration *</label>
+      <textarea id="theme" name="theme" rows="3" required></textarea>
+
+      <label for="duration">Estimated Duration (minutes) *</label>
+      <input type="number" id="duration" name="duration" min="1" max="30" required />
+
+      <label for="groupType">Performance Type *</label>
+      <select id="groupType" name="groupType" required>
+        <option value="">-- Select --</option>
+        <option value="Solo">Solo</option>
+        <option value="Group">Group</option>
+      </select>
+
+      <label for="description">Describe Your Talent *</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+
+      <label for="file">Upload Video or Photo (Optional)</label>
+      <input type="file" id="file" name="file" accept="image/*,video/*" />
+
+      <label for="notes">Additional Notes (Optional)</label>
+      <textarea id="notes" name="notes" rows="3"></textarea>
+
+      <button type="submit">Submit Talent</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("talentForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const category = document.getElementById("category").value.trim();
+      const description = document.getElementById("description").value.trim();
+      const theme = document.getElementById("theme").value.trim();
+      const title = document.getElementById("performanceTitle").value.trim();
+      const duration = document.getElementById("duration").value.trim();
+
+      if (name && email && category && description && theme && title && duration) {
+        alert("✅ Thank you! Your talent has been submitted.");
+        this.reset();
+      } else {
+        alert("⚠️ Please fill in all required fields marked with *");
+      }
+    });
+  </script>
+</body>
+</html>

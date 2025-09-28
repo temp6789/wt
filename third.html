@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+ body, h1 {
+   transition: background-color 2s;
+   animation: bg-color 5s infinite ease-in-out;
+ }
+ @keyframes bg-color {
+   0% {
+     font-size: 30px;
+     background-color: rgb(243, 120, 120);
+   }
+   50% {
+     font-size: 70px;
+     background-color: rgb(183, 240, 183);
+   }
+   100% {
+     font-size: 30px;
+     background-color: rgb(169, 169, 235);
+   }
+ }
+ </style>
+</head>
+<body>
+ <h1 id="h1" style="padding:45vh; text-align: center;">
+   Dynamic Background Color Slider
+ </h1>
+</body>
+</html>

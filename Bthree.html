@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Employee Salary Form</title>
+  <script>
+    function calculateSalary() {
+      var name = document.getElementById("name").value;
+      var id = document.getElementById("empid").value;
+      var basic = parseFloat(document.getElementById("basic").value);
+
+      if (basic == null || basic <= 0) {
+        alert("Please enter a valid Basic Salary");
+        return;
+      }
+
+      var da = basic * 0.10;
+      var hra = basic * 0.15;
+      var pf = basic * 0.05;
+      var tax = basic * 0.08;
+      var gross = basic + da + hra;
+      var deduction = pf + tax;
+      var net = gross - deduction;
+
+      var result =
+        "<h3>Employee Salary Details</h3>" +
+        "Name: " + name + "<br>" +
+        "Employee ID: " + id + "<br>" +
+        "Basic Salary: ₹" + basic.toFixed(2) + "<br>" +
+        "DA (10%): ₹" + da.toFixed(2) + "<br>" +
+        "HRA (15%): ₹" + hra.toFixed(2) + "<br>" +
+        "PF (5%): ₹" + pf.toFixed(2) + "<br>" +
+        "TAX (8%): ₹" + tax.toFixed(2) + "<br>" +
+        "Gross Pay: ₹" + gross.toFixed(2) + "<br>" +
+        "Deduction: ₹" + deduction.toFixed(2) + "<br>" +
+        "<b>Net Pay: ₹" + net.toFixed(2) + "</b>";
+
+      document.getElementById("output").innerHTML = result;
+    }
+  </script>
+</head>
+<body>
+  <h2>Employee Information Form</h2>
+  <form onsubmit="event.preventDefault(); calculateSalary();">
+    Employee Name: <input type="text" id="name"><br><br>
+    Employee ID: <input type="text" id="empid"><br><br>
+    Basic Salary: <input type="number" id="basic"><br><br>
+    <input type="submit" value="Calculate Salary">
+  </form>
+  <div id="output"></div>
+</body>
+</html>

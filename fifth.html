@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Webpage</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    .hero {
+      height: 100vh;
+      background: linear-gradient(135deg, #3498db, #8e44ad);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .hero-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    section {
+      padding: 3rem 1rem;
+      min-height: 50vh;
+      text-align: center;
+      border-bottom: 1px solid #ccc;
+    }
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+      gap: 2rem;
+      background-color: white;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: #8e44ad;
+    }
+    section p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 0.95rem;
+    }
+    footer {
+      background-color: #f2f2f2;
+      color: #555;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Welcome to My Webpage</h1>
+      <p>This is a simple, modern webpage built with HTML and CSS. Scroll down to learn more about me.</p>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>This is the about section. You can add information about yourself, your interests, or your projects here. Keep it short and clear.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Feel free to reach out! Add your ontact details or email address here so people can get in touch.</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 My Webpage. All rights reserved. &copy; </p>
+  </footer>
+</body>
+</html>

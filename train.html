@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Food Order System</title>
+  <style>
+   body
+   {
+    padding: 0;
+    margin: 0px;
+   }
+   .container
+   {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   }
+   .foot-items
+   {
+    border: 1px solid black;
+    width: 20%;
+    gap: 100px;
+    text-align: center;
+    margin: 30px;
+   }
+   img
+   {
+    width: 200px;
+   }
+  </style>
+</head>
+<body>
+  <center>
+    <h1 style="margin: 40px; ">  this is my food order</h1>
+  </center>
+  
+ <div class="container">
+
+  <div class="foot-items">
+    <div class="items">
+      <img width="100px" src="car.jpg" data-name="urder" data-price="34" alt="">
+    </div>
+    <div class="items">
+      <img width="100px" src="car.jpg" data-name="urder" data-price="34" alt="">
+    </div>
+    <div class="items">
+      <img width="100px" src="car.jpg" data-name="urder" data-price="34" alt="">
+    </div>
+  </div>
+
+  <div class="foot-items">
+    <div class="items">
+      <img width="100px" src="car.jpg" data-name="urder" data-price="34" alt="">
+    </div>
+    <div class="items">
+      <img width="100px" src="car.jpg" data-name="urder" data-price="34" alt="">
+    </div>
+    <div class="items">
+      <img width="100px" src="car.jpg" data-name="urder" data-price="34" alt="">
+    </div>
+  </div>
+
+  <div class="foot-items">
+    <div class="items">
+      <img width="100px" src="car.jpg" data-name="urder" data-price="34" alt="">
+    </div>
+    <div class="items">
+      <img width="100px" src="car.jpg" data-name="urder" data-price="34" alt="">
+    </div>
+    <div class="items">
+      <img width="100px" src="car.jpg" data-name="urder" data-price="34" alt="">
+    </div>
+  </div>
+
+ </div>
+
+  <script>
+    let fooditems = document.querySelectorAll(".food-item");
+    let orderitem = document.getElementById("orderItems");
+    let sumtotal = document.getElementById("summaryTotal");
+    let disorder = document.getElementById("confirmationMessage");
+    let total = 0;
+
+    fooditems.forEach(function(item)
+  {
+    item.addEventListener("click",function()
+      {
+        let name = this.getAttribute("data-name")
+        let price = parseInt(this.getAttribute("data-price"));
+        let newitem = document.createElement("li");
+        newitem.textContent = name + " - $"+price;
+        orderitem.appendChild(newitem);
+        total += price;
+        sumtotal.textContent = total;
+      });
+  });
+function placeOrder()
+{
+  if (total != 0) {
+    disorder.style.display="block";
+  } else {
+    alert("atleaest one item slecet");
+  }
+  
+}
+  </script>
+</body>
+</html>

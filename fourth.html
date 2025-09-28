@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Map Example</title>
+</head>
+<body>
+  <h2>Client-side Image Map</h2>
+  <img src="world-continents-map-with-names.jpg" usemap="#image-map" alt="World Map">
+
+  <map name="image-map">
+    <area href="https://en.wikipedia.org/wiki/North_America" coords="437,447,715,614" shape="rect" alt="North America" title="North America">
+    <area href="https://en.wikipedia.org/wiki/South_America" coords="744,875,954,1011" shape="rect" alt="South America" title="South America">
+    <area href="https://en.wikipedia.org/wiki/Antarctica" coords="1212,1405,1639,1513" shape="rect" alt="Antarctica" title="Antarctica">
+    <area href="https://en.wikipedia.org/wiki/Africa" coords="1165,695,1427,833" shape="rect" alt="Africa" title="Africa">
+    <area href="https://en.wikipedia.org/wiki/Europe" coords="1296,472,1499,557" shape="rect" alt="Europe" title="Europe">
+    <area href="https://en.wikipedia.org/wiki/Asia" coords="1676,411,1859,546" shape="rect" alt="Asia" title="Asia">
+    <area href="https://en.wikipedia.org/wiki/Oceania" coords="1926,986,2140,1092" shape="rect" alt="Oceania" title="Oceania">
+  </map>
+
+  <hr>
+
+  <h2>Server-side Image Map</h2>
+  <form method="get" action="server-map.php">
+    <input type="image" src="world-continents-map-with-names.jpg" name="mapimage" alt="Submit Form Using Image Map">
+  </form>
+</body>
+</html>
